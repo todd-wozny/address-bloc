@@ -15,7 +15,7 @@
      puts "2 - Create an entry"
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
-     puts "5 - View Entry n"
+     puts "5 - Nuke all entries"
      puts "6 - Exit"
      print "Enter your selection: "
  
@@ -41,7 +41,8 @@
        main_menu
      when 5
        system "clear"
-       entry_n_submenu
+       @address_book.nuke
+       puts "All entries deleted!"
        main_menu
      when 6
        puts "Good-bye!"
@@ -202,7 +203,7 @@
        entries_submenu(entry)
      end
    end
-   
+    
    def search_submenu(entry)
  # #12
      puts "\nd - delete entry"
